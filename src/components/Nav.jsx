@@ -1,8 +1,16 @@
+
+import React, { useState } from 'react';
 import { hamburger } from "../assets/icons";
 import { headerLogo } from "../assets/images";
 import { navLinks } from "../constants";
 
 const Nav = () => {
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <header className='padding-x py-8 absolute z-10 w-full'>
       <nav className='flex justify-between items-center max-container'>
@@ -15,7 +23,7 @@ const Nav = () => {
             className='m-0 w-[129px] h-[29px]'
           />
         </a>
-        <ul className='flex-1 flex justify-center items-center gap-16 max-lg:hidden'>
+        <ul className={`flex-1 flex flex-col justify-center items-center gap-16 max-lg:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
           {navLinks.map((item) => (
             <li key={item.label}>
               <a
@@ -33,7 +41,7 @@ const Nav = () => {
           <a href='/'>Explore now</a>
         </div>
         <div className='hidden max-lg:block'>
-          <img src={hamburger} alt='hamburger icon' width={25} height={25} />
+          <img src={hamburger} alt='hamburger icon' width={25} height={25} onClick={toggleMobileMenu} />
         </div>
       </nav>
     </header>
