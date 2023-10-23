@@ -1,1 +1,7 @@
-this is  a nike page displaying some of the shoes of the site developed in react and tailwind 
+![Nike Landing Page](https://i.ibb.co/pxzMGb4/Thumbnail-2.png)
+
+
+## Tailwind CSS Starter Kit
+📚 https://resource.jsmastery.pro/tailwind-starter-kit
+
+
